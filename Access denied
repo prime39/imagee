@@ -1,0 +1,23 @@
+            embed = discord.Embed(
+                title="**__Accès refusé__**",
+                description="*_Vous n’avez pas l’autorisation d’utiliser cette commande.<a:8417pengunosign:1452596322434678825>_*",
+                color=discord.Color.red(),
+                timestamp=datetime.utcnow()
+            )
+
+            embed.set_author(
+                name=ctx.author.display_name,
+                icon_url=ctx.author.display_avatar.url
+            )
+            THUMBNAIL_URL = "https://github.com/Iseyg91/Image/blob/main/image-removebg-preview%20(5).png?raw=true"
+            embed.set_thumbnail(url=THUMBNAIL_URL)
+
+            embed.set_footer(
+                text="Egg System",
+                icon_url=ctx.guild.icon.url if ctx.guild.icon else None
+            )
+
+            msg = await ctx.send(embed=embed)
+            await msg.delete(delay=3)
+
+            return
